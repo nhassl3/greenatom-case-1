@@ -2,6 +2,9 @@ import { parseArgs } from 'node:util'
 import { config } from '../config.js'
 import { ValidationError } from '../errors.js'
 
+const MIN_DAYS = 1;
+const MAX_DAYS = 7;
+
 export function buildHelp() {
 	return `Прогноз погоды
 
@@ -32,7 +35,7 @@ function parseDays(rawDays) {
 		return config.defaultForecastDays;
 	}
 	const days = Number.parseInt(rawDays, 10);
-	if (Number.isNaN(days) || days < 1 || days > 7) {
+	if (Number.isNaN(days) || days < MIN_DAYS || days > MAX_DAYS) {
 		throw new ValidationError(
 			`Параметр --days должен быть целым числом от ${MIN_DAYS} до ${MAX_DAYS}, получено: «${rawDays}»`,
 		);
