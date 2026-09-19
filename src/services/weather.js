@@ -39,7 +39,7 @@ export async function getCityDigest(city, { days, noCache }) {
 
 export async function getDigests(cities, options) {
 	const results = await Promise.allSettled(
-		cities.map((city) => getCityDigest(city, options)),
+		cities.map((city) => getCityDigest(city, options))
 	); // без прерывания остальных городов, если какой-то из них упадет
 
 	const digests = [];
