@@ -1,38 +1,38 @@
 {
-  "name": "case1",
-  "version": "1.0.0",
-  "description": "Кейс 1: скрипт на Node.js, обращающийся к внешнему REST API (fetch + async/await), обработка JSON и ошибок; оформление в Git (ветки, PR, прохождение code review)",
-  "keywords": [
-    "greenatom",
-    "rosatom",
-    "caselab",
-    "case-1"
-  ],
-  "homepage": "https://github.com/nhassl3/greenatom-case-1#readme",
-  "bugs": {
-    "url": "https://github.com/nhassl3/greenatom-case-1/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nhassl3/greenatom-case-1.git"
-  },
-  "license": "MIT",
-  "author": "nhassl3",
-  "type": "module",
-  "main": "index.js",
-  "engines": {
-    "node": ">=20"
-  },
-  "scripts": {
-    "start": "node src/index.js",
-    "test": "node --test tests/",
-    "lint": "eslint .",
-    "format": "prettier --write ."
-  },
-  "devDependencies": {
-    "eslint": "^9.0.0",
-    "@eslint/js": "^9.0.0",
-    "prettier": "^3.0.0",
-    "eslint-config-prettier": "^9.0.0"
-  }
+	"name": "case1",
+	"version": "1.0.0",
+	"description": "Кейс 1: скрипт на Node.js, обращающийся к внешнему REST API (fetch + async/await), обработка JSON и ошибок; оформление в Git (ветки, PR, прохождение code review)",
+	"keywords": [
+		"greenatom",
+		"rosatom",
+		"caselab",
+		"case-1"
+	],
+	"homepage": "https://github.com/nhassl3/greenatom-case-1#readme",
+	"bugs": {
+		"url": "https://github.com/nhassl3/greenatom-case-1/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nhassl3/greenatom-case-1.git"
+	},
+	"license": "MIT",
+	"author": "nhassl3",
+	"type": "module",
+	"main": "index.js",
+	"engines": {
+		"node": ">=20"
+	},
+	"scripts": {
+		"start": "node src/index.js",
+		"test": "node --test",
+		"lint": "eslint .",
+		"format": "prettier --write ."
+	},
+	"devDependencies": {
+		"eslint": "^9.0.0",
+		"@eslint/js": "^9.0.0",
+		"prettier": "^3.0.0",
+		"eslint-config-prettier": "^9.0.0"
+	}
 }
