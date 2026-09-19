@@ -1,6 +1,6 @@
-import { parseArgs } from 'node:util'
-import { config } from '../config.js'
-import { ValidationError } from '../errors.js'
+import { parseArgs } from 'node:util';
+import { config } from '../config.js';
+import { ValidationError } from '../errors.js';
 
 const MIN_DAYS = 1;
 const MAX_DAYS = 7;

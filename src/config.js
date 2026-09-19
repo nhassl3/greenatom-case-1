@@ -1,6 +1,7 @@
 try {
 	process.loadEnvFile();
 } catch {
+	// .env может быть пустой
 }
 
 function readInt(name, fallback) {

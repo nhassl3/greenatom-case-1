@@ -1,5 +1,5 @@
-import { config } from '../config.js'
-import { ApiError, InvalidJsonError, NetworkError, TimeoutError } from '../errors.js'
+import { config } from '../config.js';
+import { ApiError, InvalidJsonError, NetworkError, TimeoutError } from '../errors.js';
 
 export async function fetchJson(baseUrl, params = {}) {
 	const url = new URL(baseUrl);

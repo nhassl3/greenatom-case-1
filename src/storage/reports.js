@@ -1,6 +1,6 @@
-import { mkdir, readFile, writeFile } from 'node:fs/promises'
-import path from 'node:path'
-import { config } from '../config.js'
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import path from 'node:path';
+import { config } from '../config.js';
 
 function slug(city) {
 	return city.trim().replace(/\s+/g, '_').replace(/[/\\]/g, '_');

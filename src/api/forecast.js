@@ -1,5 +1,16 @@
-import { config } from '../config.js'
-import { fetchJson } from './http.js'
+import { config } from '../config.js';
+import { fetchJson } from './http.js';
+
+export function parseForecastResponse(data) {
+	const daily = data?.daily;
+	const dates = daily?.time ?? [];
+	return dates.map((date, i) => ({
+		date,
+		tempMax: daily.temperature_2m_max[i],
+		tempMin: daily.temperature_2m_min[i],
+		precipitation: daily.precipitation_sum[i],
+	}));
+}
 
 export async function getForecast({ latitude, longitude, days }) {
 	const data = await fetchJson(config.weatherApiUrl, {
@@ -11,12 +22,5 @@ export async function getForecast({ latitude, longitude, days }) {
 		temperature_unit: config.temperatureUnit,
 		precipitation_unit: config.precipitationUnit,
 	});
-	const daily = data?.daily;
-	const dates = daily?.time ?? [];
-	return dates.map((date, i) => ({
-		date,
-		tempMax: daily.temperature_2m_max[i],
-		tempMin: daily.temperature_2m_min[i],
-		precipitation: daily.precipitation_sum[i],
-	}));
+	return parseForecastResponse(data);
 }

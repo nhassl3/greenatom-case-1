@@ -1,7 +1,7 @@
-import { buildHelp, parseCliArgs } from './cli/args.js'
-import { AppError } from './errors.js'
-import { printDigest } from './format/output.js'
-import { getDigests } from './services/weather.js'
+import { buildHelp, parseCliArgs } from './cli/args.js';
+import { AppError } from './errors.js';
+import { printDigest } from './format/output.js';
+import { getDigests } from './services/weather.js';
 
 function reportUnexpectedError(err) {
 	const message = err instanceof Error ? err.message : String(err);
