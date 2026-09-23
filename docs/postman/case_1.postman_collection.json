@@ -1,0 +1,560 @@
+{
+	"info": {
+		"_postman_id": "d4e2ff79-68fa-4f79-962c-f652bf2d1718",
+		"name": "case_1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21235873"
+	},
+	"item": [
+		{
+			"name": "GetCoordinates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrlCoordinates}}?count=1&language=ru&format=json&name={{city}}",
+					"host": [
+						"{{baseUrlCoordinates}}"
+					],
+					"query": [
+						{
+							"key": "count",
+							"value": "1"
+						},
+						{
+							"key": "language",
+							"value": "ru"
+						},
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "name",
+							"value": "{{city}}"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrlCoordinates}}?count=1&language=ru&format=json&name={{city}}",
+							"host": [
+								"{{baseUrlCoordinates}}"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "1"
+								},
+								{
+									"key": "language",
+									"value": "ru"
+								},
+								{
+									"key": "format",
+									"value": "json"
+								},
+								{
+									"key": "name",
+									"value": "{{city}}"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 19 Sep 2026 10:27:02 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "277"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Encoding-Time",
+							"value": "0.0033974647521972656 ms"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "deflate"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"results\": [\n        {\n            \"id\": 520555,\n            \"name\": \"Нижний Новгород\",\n            \"latitude\": 56.32867,\n            \"longitude\": 44.00205,\n            \"elevation\": 141,\n            \"feature_code\": \"PPLA\",\n            \"country_code\": \"RU\",\n            \"admin1_id\": 559838,\n            \"timezone\": \"Europe/Moscow\",\n            \"population\": 1259013,\n            \"country_id\": 2017370,\n            \"country\": \"Россия\",\n            \"admin1\": \"Нижегородская Область\"\n        }\n    ],\n    \"generationtime_ms\": 1.7908812\n}"
+				},
+				{
+					"name": "CityNotFound",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrlCoordinates}}?count=1&language=ru&format=json&name={{city}}",
+							"host": [
+								"{{baseUrlCoordinates}}"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "1"
+								},
+								{
+									"key": "language",
+									"value": "ru"
+								},
+								{
+									"key": "format",
+									"value": "json"
+								},
+								{
+									"key": "name",
+									"value": "{{city}}"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 19 Sep 2026 10:33:36 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Encoding-Time",
+							"value": "0.0029802322387695312 ms"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "deflate"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"generationtime_ms\": 0.27871132\n}"
+				},
+				{
+					"name": "WrongFormat",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrlCoordinates}}?count=1&language=ru&format=jso&name={{city}}",
+							"host": [
+								"{{baseUrlCoordinates}}"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "1"
+								},
+								{
+									"key": "language",
+									"value": "ru"
+								},
+								{
+									"key": "format",
+									"value": "jso"
+								},
+								{
+									"key": "name",
+									"value": "{{city}}"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 19 Sep 2026 10:34:30 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "117"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "deflate"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"reason\": \"Data corrupted at path 'format'. Cannot initialize ProtobufSerializationFormat from invalid String value jso.\",\n    \"error\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "GetWeatherForecast",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrlWeatherForecast}}?daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=auto&latitude={{lat}}&longitude={{lon}}&forecast_days={{days}}",
+					"host": [
+						"{{baseUrlWeatherForecast}}"
+					],
+					"query": [
+						{
+							"key": "daily",
+							"value": "temperature_2m_max,temperature_2m_min,precipitation_sum"
+						},
+						{
+							"key": "timezone",
+							"value": "auto"
+						},
+						{
+							"key": "latitude",
+							"value": "{{lat}}"
+						},
+						{
+							"key": "longitude",
+							"value": "{{lon}}"
+						},
+						{
+							"key": "forecast_days",
+							"value": "{{days}}"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrlWeatherForecast}}?daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=auto&latitude={{lat}}&longitude={{lon}}&forecast_days={{days}}",
+							"host": [
+								"{{baseUrlWeatherForecast}}"
+							],
+							"query": [
+								{
+									"key": "daily",
+									"value": "temperature_2m_max,temperature_2m_min,precipitation_sum"
+								},
+								{
+									"key": "timezone",
+									"value": "auto"
+								},
+								{
+									"key": "latitude",
+									"value": "{{lat}}"
+								},
+								{
+									"key": "longitude",
+									"value": "{{lon}}"
+								},
+								{
+									"key": "forecast_days",
+									"value": "{{days}}"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 19 Sep 2026 10:31:09 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "deflate"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"latitude\": 56.3125,\n    \"longitude\": 44,\n    \"generationtime_ms\": 0.061631202697753906,\n    \"utc_offset_seconds\": 10800,\n    \"timezone\": \"Europe/Moscow\",\n    \"timezone_abbreviation\": \"GMT+3\",\n    \"elevation\": 128,\n    \"daily_units\": {\n        \"time\": \"iso8601\",\n        \"temperature_2m_max\": \"°C\",\n        \"temperature_2m_min\": \"°C\",\n        \"precipitation_sum\": \"mm\"\n    },\n    \"daily\": {\n        \"time\": [\n            \"2026-09-19\",\n            \"2026-09-20\",\n            \"2026-09-21\"\n        ],\n        \"temperature_2m_max\": [\n            18.6,\n            19.9,\n            21.1\n        ],\n        \"temperature_2m_min\": [\n            10.9,\n            8.5,\n            11.1\n        ],\n        \"precipitation_sum\": [\n            0,\n            0,\n            0\n        ]\n    }\n}"
+				},
+				{
+					"name": "WrongNumbers",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrlWeatherForecast}}?daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=auto&latitude={{lat}}&longitude={{lon}}&forecast_days={{days}}",
+							"host": [
+								"{{baseUrlWeatherForecast}}"
+							],
+							"query": [
+								{
+									"key": "daily",
+									"value": "temperature_2m_max,temperature_2m_min,precipitation_sum"
+								},
+								{
+									"key": "timezone",
+									"value": "auto"
+								},
+								{
+									"key": "latitude",
+									"value": "{{lat}}"
+								},
+								{
+									"key": "longitude",
+									"value": "{{lon}}"
+								},
+								{
+									"key": "forecast_days",
+									"value": "{{days}}"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 19 Sep 2026 10:35:38 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "90"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "deflate"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"reason\": \"Parameter 'latitude' and 'longitude' must have the same number of elements\",\n    \"error\": true\n}"
+				},
+				{
+					"name": "LatitudeRange",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrlWeatherForecast}}?daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=auto&latitude={{lat}}&longitude={{lon}}&forecast_days={{days}}",
+							"host": [
+								"{{baseUrlWeatherForecast}}"
+							],
+							"query": [
+								{
+									"key": "daily",
+									"value": "temperature_2m_max,temperature_2m_min,precipitation_sum"
+								},
+								{
+									"key": "timezone",
+									"value": "auto"
+								},
+								{
+									"key": "latitude",
+									"value": "{{lat}}"
+								},
+								{
+									"key": "longitude",
+									"value": "{{lon}}"
+								},
+								{
+									"key": "forecast_days",
+									"value": "{{days}}"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 19 Sep 2026 10:36:29 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "90"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "deflate"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": true,\n    \"reason\": \"Latitude must be in range of -90 to 90°. Given: 123.00012.\"\n}"
+				},
+				{
+					"name": "Overload",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrlWeatherForecast}}?daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=auto&latitude={{lat}}&longitude={{lon}}&forecast_days={{days}}",
+							"host": [
+								"{{baseUrlWeatherForecast}}"
+							],
+							"query": [
+								{
+									"key": "daily",
+									"value": "temperature_2m_max,temperature_2m_min,precipitation_sum"
+								},
+								{
+									"key": "timezone",
+									"value": "auto"
+								},
+								{
+									"key": "latitude",
+									"value": "{{lat}}"
+								},
+								{
+									"key": "longitude",
+									"value": "{{lon}}"
+								},
+								{
+									"key": "forecast_days",
+									"value": "{{days}}"
+								}
+							]
+						}
+					},
+					"status": "Service Unavailable",
+					"code": 503,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 19 Sep 2026 10:37:15 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "59"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "deflate"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": true,\n    \"reason\": \"The service is overloaded\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrlCoordinates",
+			"value": ""
+		},
+		{
+			"key": "baseUrlWeatherForecast",
+			"value": ""
+		},
+		{
+			"key": "lat",
+			"value": ""
+		},
+		{
+			"key": "lon",
+			"value": ""
+		},
+		{
+			"key": "city",
+			"value": ""
+		},
+		{
+			"key": "days",
+			"value": ""
+		}
+	]
+}
